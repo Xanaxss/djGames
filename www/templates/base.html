@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="RU">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+    <div class="wrap-logo">
+        <a href="{% url 'index' %}" class="logo">CHTOTIM</a>
+    </div>
+    <nav>
+        <a class="active" href="{% url 'index' %}">Главная</a>
+        <a href="{% url 'all_games' %}">К играм</a>
+        <a href="{% url 'all_company' %}">К компаниям</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'index' %}">Профиль ({{ user }})</a>
+        {% else %}
+            <a href="{% url 'index' %}">Войти</a>
+        {% endif %}
+    </nav>
+</header>
+{% block content %}
+{% endblock %}
+</body>
+</html>

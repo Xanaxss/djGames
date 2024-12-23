@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <H1>Все компании</H1>
+
+    <div class="cards">
+        {% for comp in company %}
+            {% include 'include/company-card.html' with comp=comp %}
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

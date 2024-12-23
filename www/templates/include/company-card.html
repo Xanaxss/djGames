@@ -1,0 +1,10 @@
+{% load static %}
+<div class="card">
+    <h3>{{ comp.name }}</h3>
+    {% if comp.modelimagecompany_set.values.first.image %}
+        <img src="/media/{{ comp.modelimagecompany_set.values.first.image }}" alt="">
+    {% else %}
+        <img src="{% static 'img/empty.png' %}" alt="">
+    {% endif %}
+    <a href="{% url 'detail_company' comp.slug %}">Перейти</a>
+</div>

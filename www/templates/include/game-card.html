@@ -1,0 +1,30 @@
+{% load static %}
+<div class="card">
+
+    <h3>{{ game.name }}</h3>
+
+    {% if game.modelimagegame_set.values.first.image %}
+        <img src="/media/{{ game.modelimagegame_set.values.first.image }}" alt="">
+    {% else %}
+        <img src="{% static 'img/empty.png' %}" alt="">
+    {% endif %}
+
+    <small>Дата выхода: {{ game.date_published }}</small>
+    <small>Разработчик: {{ game.company }}</small>
+    <small>Подписались: {{ game.modelfavorite_set.count }}</small>
+
+    <form method="post" action="{% url 'subscribe' %}">
+        {% csrf_token %}
+
+        <input type="hidden" name="game" value="{{ game.id }}"/>
+        {% if game.id in favorite %}
+            <button class="btn btn-red">Отписаться</button>
+        {% else %}
+            <button class="btn btn-green">Подписаться</button>
+        {% endif %}
+
+    </form>
+
+    <a href="{% url 'detail' game.slug %}">Перейти</a>
+
+</div>

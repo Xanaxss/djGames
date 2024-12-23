@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>{{ game.name }}</h1>
+        <p>{{ game.description }}</p>
+        <a href="{% url 'detail_company' game.company.slug %}">{{ game.company }}</a>
+        <p>{{ game.date_published }}</p>
+        {% for value in game.modelimagegame_set.all %}
+            <img class="img-detail" src="/media/{{ value.image }}" alt="{{ value.description }}">
+        {% endfor %}
+        <p>Фавориты: {{ game.modelfavorite_set.count }}</p>
+        <h1>Комментарии</h1>
+
+        {% if game.modelcomment_set.all %}
+            {% for comment in game.modelcomment_set.all %}
+                <p>{{ comment.user }}: {{ comment.comment }}</p>
+            {% endfor %}
+        {% else %}
+            <p>Комментариев пока нет :(<br>будьте первым</p>
+        {% endif %}
+
+    </div>
+
+{% endblock %}

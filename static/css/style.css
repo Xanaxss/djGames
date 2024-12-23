@@ -1,0 +1,133 @@
+body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #F1F7ED;
+}
+
+h1 {
+    color: #54494B;
+    font-size: 2.0rem;
+}
+
+h2 {
+    color: #54494B;
+    font-size: 1.8rem;
+}
+
+h3 {
+    color: #54494B;
+    font-size: 1.5rem;
+}
+
+.container {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.card {
+    background-color: #54494BAA;
+    width: 350px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 5px;
+
+    img {
+        width: 90%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    h3 {
+        margin: 0;
+        padding: 10px;
+        height: 60px;
+        align-content: center;
+        color: #F1F7ED;
+    }
+
+    small {
+        display: block;
+        text-align: start;
+        padding: 5px 0 0 15px;
+        color: #F1F7ED;
+    }
+
+    a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #F1F7ED;
+        border-radius: 5px;
+    }
+
+    button {
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 5px;
+        background: none;
+        color: #F1F7ED;
+    }
+
+    .btn-red {
+        background-color: #4f0404;
+    }
+
+    .btn-green {
+        background-color: #044f04;
+    }
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.img-detail {
+    width: 300px;
+    object-fit: cover;
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #54494B;
+    padding: 10px 10px;
+}
+
+.wrap-logo {
+    display: flex;
+    align-items: center;
+
+}
+
+header a {
+    color: #F1F7ED;
+    padding: 8px;
+    margin: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+header a:hover {
+    background-color: #F1F7ED;
+    color: #54494B;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}

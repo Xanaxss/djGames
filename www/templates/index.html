@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Лучшие игры</h1>
+
+    <div class="cards">
+        {% for game in top_games %}
+            {% include 'include/game-card.html' with game=game %}
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
